@@ -6,6 +6,7 @@ script:
 
   - mkdir elastic-search
   - chmod 777 elastic-search
-  - docker run -it -v `pwd`/elastic-search:/usr/share/elasticsearch/data bmxmale/docker-elasticsearch:latest
+  - docker run -it -d -v `pwd`/elastic-search:/usr/share/elasticsearch/data bmxmale/docker-elasticsearch:latest
+  - sleep 30
   - ls -lash elastic-search
   - rm -rf elastic-search
