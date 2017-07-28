@@ -1,0 +1,11 @@
+services:
+  - docker
+
+script:
+  - docker build -t bmxmale/docker-elasticsearch:latest .
+
+  - mkdir elastic-search
+  - chmod 777 elastic-search
+  - docker run -it -v `pwd`/elastic-search:/usr/share/elasticsearch/data bmxmale/docker-elasticsearch:latest
+  - ls -lash elastic-search
+  - rm -rf elastic-search
