@@ -2,11 +2,11 @@ services:
   - docker
 
 script:
-  - docker build -t bmxmale/docker-elasticsearch:latest .
+  - docker build -t bmxmale/docker-elasticsearch:2.4.6 .
 
   - mkdir elastic-search
   - chmod 777 elastic-search
-  - docker run -d -v `pwd`/elastic-search:/usr/share/elasticsearch/data bmxmale/docker-elasticsearch:latest
+  - docker run -d -v `pwd`/elastic-search:/usr/share/elasticsearch/data/elasticsearch bmxmale/docker-elasticsearch:2.4.6
   - sleep 30
   - ls -lash elastic-search
   - ls -lash elastic-search/nodes
